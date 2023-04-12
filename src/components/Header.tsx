@@ -25,13 +25,15 @@ const Container = styled.div`
   justify-center
   `}
 `
-const Wrapper = tw.div`
+const Wrapper = styled.div<{ type?: 'Hotels' }>`
+  ${tw`
   max-w-5xl
   mx-auto
   mt-5
-  mb-16
   w-full
   relative
+  `};
+  ${({type}) => type !== 'Hotels' && tw`mb-16`}
 `
 const ItemList = tw.div`
   w-full
@@ -118,11 +120,13 @@ const SearchSpan = tw.span`
 `
 const StyledDateRange = tw(DateRange)`
   absolute
+  z-[2]
   top-14
 `
 
 const OptionsWrapper = tw.div`
   bg-white
+  z-[2]
   absolute
   rounded-md
   shadow-[rgba(0, 0, 0, 0.4)]
@@ -166,7 +170,7 @@ const OptionCounterButton = styled.button`
   }
 `
 
-function Header() {
+function Header({ type }: { type?: 'Hotels' }) {
   const [openDate, setOpenDate] = useState(false)
   const [openOption, setOpenOption] = useState(false)
   const [date, setDate] = useState([
@@ -194,7 +198,7 @@ function Header() {
 
   return (
     <Container>
-      <Wrapper>
+      <Wrapper type={type}>
         <ItemList>
           <Item>
             <FontAwesomeIcon icon={faBed} />
@@ -209,7 +213,7 @@ function Header() {
             <span>Car rentals</span>
           </Item>
           <Item>
-          <FontAwesomeIcon icon={faPalette} />
+            <FontAwesomeIcon icon={faPalette} />
             <span>Attractions</span>
           </Item>
           <Item>
@@ -217,92 +221,107 @@ function Header() {
             <span>Airport taxis</span>
           </Item>
         </ItemList>
-        <Title>Find your next stay</Title>
-        <Desc>Search deals on hotels, homes, and much more...</Desc>
-        <SearchList>
-          <SearchItem>
-            <FontAwesomeIcon icon={faBed} style={{ color: 'lightgray' }} />
-            <SearchInput placeholder="Where are you going?"></SearchInput>
-          </SearchItem>
-          <SearchItem>
-            <FontAwesomeIcon
-              icon={faCalendarDays}
-              style={{ color: 'lightgray' }}
-            />
-            <SearchSpan onClick={() => setOpenDate(!openDate)}>{`${format(
-              date[0].startDate,
-              'eee, MMM d'
-            )} —— ${format(date[0].endDate, 'eee, MMM d')}`}</SearchSpan>
-            {openDate && (
-              <StyledDateRange
-                editableDateInputs={true}
-                onChange={item => setDate([item.selection] as any)}
-                moveRangeOnFirstSelection={false}
-                ranges={date}
-              />
-            )}
-          </SearchItem>
-          <SearchItem>
-            <FontAwesomeIcon icon={faPerson} style={{ color: 'lightgray' }} />
-            <SearchSpan
-              onClick={() => setOpenOption(!openOption)}
-            >{`${options.adult} adult · ${options.children} children · ${options.room} room`}</SearchSpan>
-            {openOption && (
-              <OptionsWrapper>
-                <OptionItem>
-                  <OptionText>Adult</OptionText>
-                  <OptionCounter>
-                    <OptionCounterButton
-                      disabled={options.adult === 1}
-                      onClick={handleOption('adult', '-')}
-                    >
-                      -
-                    </OptionCounterButton>
-                    <OptionCounterNumber>{options.adult}</OptionCounterNumber>
-                    <OptionCounterButton onClick={handleOption('adult', '+')}>
-                      +
-                    </OptionCounterButton>
-                  </OptionCounter>
-                </OptionItem>
-                <OptionItem>
-                  <OptionText>Children</OptionText>
-                  <OptionCounter>
-                    <OptionCounterButton
-                      disabled={options.children === 0}
-                      onClick={handleOption('children', '-')}
-                    >
-                      -
-                    </OptionCounterButton>
-                    <OptionCounterNumber>
-                      {options.children}
-                    </OptionCounterNumber>
-                    <OptionCounterButton
-                      onClick={handleOption('children', '+')}
-                    >
-                      +
-                    </OptionCounterButton>
-                  </OptionCounter>
-                </OptionItem>
-                <OptionItem>
-                  <OptionText>Room</OptionText>
-                  <OptionCounter>
-                    <OptionCounterButton
-                      disabled={options.room === 1}
-                      onClick={handleOption('room', '-')}
-                    >
-                      -
-                    </OptionCounterButton>
-                    <OptionCounterNumber>{options.room}</OptionCounterNumber>
-                    <OptionCounterButton onClick={handleOption('room', '+')}>
-                      +
-                    </OptionCounterButton>
-                  </OptionCounter>
-                </OptionItem>
-              </OptionsWrapper>
-            )}
-          </SearchItem>
-          <Button to="/">Search</Button>
-        </SearchList>
+        {type !== 'Hotels' && (
+          <>
+            <Title>Find your next stay</Title>
+            <Desc>Search deals on hotels, homes, and much more...</Desc>
+            <SearchList>
+              <SearchItem>
+                <FontAwesomeIcon icon={faBed} style={{ color: 'lightgray' }} />
+                <SearchInput placeholder="Where are you going?"></SearchInput>
+              </SearchItem>
+              <SearchItem>
+                <FontAwesomeIcon
+                  icon={faCalendarDays}
+                  style={{ color: 'lightgray' }}
+                />
+                <SearchSpan onClick={() => setOpenDate(!openDate)}>{`${format(
+                  date[0].startDate,
+                  'eee, MMM d'
+                )} —— ${format(date[0].endDate, 'eee, MMM d')}`}</SearchSpan>
+                {openDate && (
+                  <StyledDateRange
+                    editableDateInputs={true}
+                    onChange={item => setDate([item.selection] as any)}
+                    moveRangeOnFirstSelection={false}
+                    ranges={date}
+                  />
+                )}
+              </SearchItem>
+              <SearchItem>
+                <FontAwesomeIcon
+                  icon={faPerson}
+                  style={{ color: 'lightgray' }}
+                />
+                <SearchSpan
+                  onClick={() => setOpenOption(!openOption)}
+                >{`${options.adult} adult · ${options.children} children · ${options.room} room`}</SearchSpan>
+                {openOption && (
+                  <OptionsWrapper>
+                    <OptionItem>
+                      <OptionText>Adult</OptionText>
+                      <OptionCounter>
+                        <OptionCounterButton
+                          disabled={options.adult === 1}
+                          onClick={handleOption('adult', '-')}
+                        >
+                          -
+                        </OptionCounterButton>
+                        <OptionCounterNumber>
+                          {options.adult}
+                        </OptionCounterNumber>
+                        <OptionCounterButton
+                          onClick={handleOption('adult', '+')}
+                        >
+                          +
+                        </OptionCounterButton>
+                      </OptionCounter>
+                    </OptionItem>
+                    <OptionItem>
+                      <OptionText>Children</OptionText>
+                      <OptionCounter>
+                        <OptionCounterButton
+                          disabled={options.children === 0}
+                          onClick={handleOption('children', '-')}
+                        >
+                          -
+                        </OptionCounterButton>
+                        <OptionCounterNumber>
+                          {options.children}
+                        </OptionCounterNumber>
+                        <OptionCounterButton
+                          onClick={handleOption('children', '+')}
+                        >
+                          +
+                        </OptionCounterButton>
+                      </OptionCounter>
+                    </OptionItem>
+                    <OptionItem>
+                      <OptionText>Room</OptionText>
+                      <OptionCounter>
+                        <OptionCounterButton
+                          disabled={options.room === 1}
+                          onClick={handleOption('room', '-')}
+                        >
+                          -
+                        </OptionCounterButton>
+                        <OptionCounterNumber>
+                          {options.room}
+                        </OptionCounterNumber>
+                        <OptionCounterButton
+                          onClick={handleOption('room', '+')}
+                        >
+                          +
+                        </OptionCounterButton>
+                      </OptionCounter>
+                    </OptionItem>
+                  </OptionsWrapper>
+                )}
+              </SearchItem>
+              <Button to="/">Search</Button>
+            </SearchList>
+          </>
+        )}
       </Wrapper>
     </Container>
   )
