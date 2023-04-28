@@ -19,7 +19,7 @@ const Container = styled.div`
 `
 const Wrapper = styled.div`
   ${tw`
-  max-w-5xl
+  max-w-6xl
   w-full
   flex
   items-center

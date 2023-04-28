@@ -2,7 +2,7 @@ import React from 'react'
 import tw from 'twin.macro'
 
 const Container = tw.div`
-  max-w-5xl
+  max-w-6xl
   mx-auto
 `
 

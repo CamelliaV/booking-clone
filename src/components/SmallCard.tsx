@@ -24,9 +24,11 @@ const Sub = tw.div`
   text-[#6b6b6b]
 `
 export default function SmallCard({
-  info
+  info,
+  type
 }: {
-  info: { url: string; title: string; subtitle: string }
+  info: { url?: string; title?: string; subtitle?: string }
+  type: string
 }) {
   return (
     <Container>

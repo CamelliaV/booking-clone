@@ -27,7 +27,7 @@ const Container = styled.div`
 `
 const Wrapper = styled.div<{ type?: 'Hotels' }>`
   ${tw`
-  max-w-5xl
+  max-w-6xl
   mx-auto
   mt-5
   w-full
@@ -95,7 +95,7 @@ const SearchList = styled.div`
   absolute
   -bottom-24
   w-full
-  max-w-5xl
+  max-w-6xl
   `};
   border: 3px solid #febb02;
 `
