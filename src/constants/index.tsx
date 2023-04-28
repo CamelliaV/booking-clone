@@ -40,9 +40,74 @@ const dataShowcase: dataShowcase = {
       title: 'Tokyo',
       subtitle: '5,656 properties',
       url: 'https://q-xx.bstatic.com/xdata/images/city/170x136/619763.jpg?k=3bfc62a779df5b92694287e9fc0b82d795f93700ddf8887d66f3191ee745dcc5&o='
+    },
+    {
+      title: 'Tokyo',
+      subtitle: '5,656 properties',
+      url: 'https://q-xx.bstatic.com/xdata/images/city/170x136/619763.jpg?k=3bfc62a779df5b92694287e9fc0b82d795f93700ddf8887d66f3191ee745dcc5&o='
+    },
+    {
+      title: 'Tokyo',
+      subtitle: '5,656 properties',
+      url: 'https://q-xx.bstatic.com/xdata/images/city/170x136/619763.jpg?k=3bfc62a779df5b92694287e9fc0b82d795f93700ddf8887d66f3191ee745dcc5&o='
+    },
+    {
+      title: 'Tokyo',
+      subtitle: '5,656 properties',
+      url: 'https://q-xx.bstatic.com/xdata/images/city/170x136/619763.jpg?k=3bfc62a779df5b92694287e9fc0b82d795f93700ddf8887d66f3191ee745dcc5&o='
+    },
+    {
+      title: 'Tokyo',
+      subtitle: '5,656 properties',
+      url: 'https://q-xx.bstatic.com/xdata/images/city/170x136/619763.jpg?k=3bfc62a779df5b92694287e9fc0b82d795f93700ddf8887d66f3191ee745dcc5&o='
+    },
+    {
+      title: 'Tokyo',
+      subtitle: '5,656 properties',
+      url: 'https://q-xx.bstatic.com/xdata/images/city/170x136/619763.jpg?k=3bfc62a779df5b92694287e9fc0b82d795f93700ddf8887d66f3191ee745dcc5&o='
+    },
+    {
+      title: 'Tokyo',
+      subtitle: '5,656 properties',
+      url: 'https://q-xx.bstatic.com/xdata/images/city/170x136/619763.jpg?k=3bfc62a779df5b92694287e9fc0b82d795f93700ddf8887d66f3191ee745dcc5&o='
     }
   ],
   propertyData: [
+    {
+      title: 'Hotels',
+      subtitle: '954,989 hotels',
+      url: 'https://q-xx.bstatic.com/xdata/images/xphoto/263x210/57584488.jpeg?k=d8d4706fc72ee789d870eb6b05c0e546fd4ad85d72a3af3e30fb80ca72f0ba57&o='
+    },
+    {
+      title: 'Hotels',
+      subtitle: '954,989 hotels',
+      url: 'https://q-xx.bstatic.com/xdata/images/xphoto/263x210/57584488.jpeg?k=d8d4706fc72ee789d870eb6b05c0e546fd4ad85d72a3af3e30fb80ca72f0ba57&o='
+    },
+    {
+      title: 'Hotels',
+      subtitle: '954,989 hotels',
+      url: 'https://q-xx.bstatic.com/xdata/images/xphoto/263x210/57584488.jpeg?k=d8d4706fc72ee789d870eb6b05c0e546fd4ad85d72a3af3e30fb80ca72f0ba57&o='
+    },
+    {
+      title: 'Hotels',
+      subtitle: '954,989 hotels',
+      url: 'https://q-xx.bstatic.com/xdata/images/xphoto/263x210/57584488.jpeg?k=d8d4706fc72ee789d870eb6b05c0e546fd4ad85d72a3af3e30fb80ca72f0ba57&o='
+    },
+    {
+      title: 'Hotels',
+      subtitle: '954,989 hotels',
+      url: 'https://q-xx.bstatic.com/xdata/images/xphoto/263x210/57584488.jpeg?k=d8d4706fc72ee789d870eb6b05c0e546fd4ad85d72a3af3e30fb80ca72f0ba57&o='
+    },
+    {
+      title: 'Hotels',
+      subtitle: '954,989 hotels',
+      url: 'https://q-xx.bstatic.com/xdata/images/xphoto/263x210/57584488.jpeg?k=d8d4706fc72ee789d870eb6b05c0e546fd4ad85d72a3af3e30fb80ca72f0ba57&o='
+    },
+    {
+      title: 'Hotels',
+      subtitle: '954,989 hotels',
+      url: 'https://q-xx.bstatic.com/xdata/images/xphoto/263x210/57584488.jpeg?k=d8d4706fc72ee789d870eb6b05c0e546fd4ad85d72a3af3e30fb80ca72f0ba57&o='
+    },
     {
       title: 'Hotels',
       subtitle: '954,989 hotels',
@@ -63,6 +128,73 @@ const dataShowcase: dataShowcase = {
       subtitle: '954,989 hotels',
       url: 'https://r-xx.bstatic.com/xdata/images/xphoto/263x210/100235855.jpeg?k=61ef6692e05b5971e2e8dc75687f844e6d0ad295a9a5ace17f7c713f167e61b5&o='
     }
+  ],
+  destinationData: [
+    {
+      title: 'Boracay, Philippines',
+      url: 'https://ac-a.static.booking.cn/xdata/images/city/300x240/685714.jpg?k=b8bf819f77d847518d4e4e7af812c6612648e9298f17136d4e22c4e495330c2f&o='
+    },
+    {
+      title: 'Boracay, Philippines',
+      url: 'https://ac-a.static.booking.cn/xdata/images/city/300x240/685714.jpg?k=b8bf819f77d847518d4e4e7af812c6612648e9298f17136d4e22c4e495330c2f&o='
+    },
+    {
+      title: 'Boracay, Philippines',
+      url: 'https://ac-a.static.booking.cn/xdata/images/city/300x240/685714.jpg?k=b8bf819f77d847518d4e4e7af812c6612648e9298f17136d4e22c4e495330c2f&o='
+    },
+    {
+      title: 'Boracay, Philippines',
+      url: 'https://ac-a.static.booking.cn/xdata/images/city/300x240/685714.jpg?k=b8bf819f77d847518d4e4e7af812c6612648e9298f17136d4e22c4e495330c2f&o='
+    },
+    {
+      title: 'Boracay, Philippines',
+      url: 'https://ac-a.static.booking.cn/xdata/images/city/300x240/685714.jpg?k=b8bf819f77d847518d4e4e7af812c6612648e9298f17136d4e22c4e495330c2f&o='
+    },
+    {
+      title: 'Boracay, Philippines',
+      url: 'https://ac-a.static.booking.cn/xdata/images/city/300x240/685714.jpg?k=b8bf819f77d847518d4e4e7af812c6612648e9298f17136d4e22c4e495330c2f&o='
+    },
+    {
+      title: 'Boracay, Philippines',
+      url: 'https://ac-a.static.booking.cn/xdata/images/city/300x240/685714.jpg?k=b8bf819f77d847518d4e4e7af812c6612648e9298f17136d4e22c4e495330c2f&o='
+    }
+  ],
+  plannerData: [
+    {
+      title: 'Suzhou',
+      subtitle: '191 km away',
+      url: 'https://ac-a.static.booking.cn/xdata/images/xphoto/300x240/140046085.jpg?k=50f84d6388c242c58de20428624d2bc16c1f24b8e20420dbd655e74196c18f12&o='
+    },
+    {
+      title: 'Suzhou',
+      subtitle: '191 km away',
+      url: 'https://ac-a.static.booking.cn/xdata/images/xphoto/300x240/140046085.jpg?k=50f84d6388c242c58de20428624d2bc16c1f24b8e20420dbd655e74196c18f12&o='
+    },
+    {
+      title: 'Suzhou',
+      subtitle: '191 km away',
+      url: 'https://ac-a.static.booking.cn/xdata/images/xphoto/300x240/140046085.jpg?k=50f84d6388c242c58de20428624d2bc16c1f24b8e20420dbd655e74196c18f12&o='
+    },
+    {
+      title: 'Suzhou',
+      subtitle: '191 km away',
+      url: 'https://ac-a.static.booking.cn/xdata/images/xphoto/300x240/140046085.jpg?k=50f84d6388c242c58de20428624d2bc16c1f24b8e20420dbd655e74196c18f12&o='
+    },
+    {
+      title: 'Suzhou',
+      subtitle: '191 km away',
+      url: 'https://ac-a.static.booking.cn/xdata/images/xphoto/300x240/140046085.jpg?k=50f84d6388c242c58de20428624d2bc16c1f24b8e20420dbd655e74196c18f12&o='
+    },
+    {
+      title: 'Suzhou',
+      subtitle: '191 km away',
+      url: 'https://ac-a.static.booking.cn/xdata/images/xphoto/300x240/140046085.jpg?k=50f84d6388c242c58de20428624d2bc16c1f24b8e20420dbd655e74196c18f12&o='
+    },
+    {
+      title: 'Suzhou',
+      subtitle: '191 km away',
+      url: 'https://ac-a.static.booking.cn/xdata/images/xphoto/300x240/140046085.jpg?k=50f84d6388c242c58de20428624d2bc16c1f24b8e20420dbd655e74196c18f12&o='
+    },
   ]
 }
 

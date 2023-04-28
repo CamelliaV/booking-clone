@@ -3,6 +3,7 @@ import tw, { styled } from 'twin.macro'
 const Container = tw.div`
   cursor-pointer
   overflow-hidden
+  px-0
   flex-[1]
 `
 const Text = styled.div``

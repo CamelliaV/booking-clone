@@ -2,13 +2,10 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import Header from '../components/Header'
 import tw, { styled } from 'twin.macro'
-import Explore from '../components/Explore'
-import Property from '../components/Property'
 import OfferCards from '../components/OfferCards'
 import EmailSection from '../components/EmailSection'
 import Footer from '../components/Footer'
 import ImageCard from '../components/ImageCard'
-import { propertyData } from '../constants'
 import ButtonLine from '../components/ButtonLine'
 import SliceSection from '../components/SliceSection'
 
@@ -124,6 +121,7 @@ export default function Home() {
             <Sub>Travellers from China are loving these places</Sub>
             <ButtonLine type="short" />
           </SectionWrapper>
+          <SliceSection type="destination" />
         </SectionContainer>
         <SectionContainer>
           <SectionWrapper>
@@ -139,6 +137,7 @@ export default function Home() {
             </Sub>
             <ButtonLine type="long" />
           </SectionWrapper>
+          <SliceSection type="planner" />
         </SectionContainer>
         <EmailSection />
         <Footer />

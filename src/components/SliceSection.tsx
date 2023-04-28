@@ -3,7 +3,7 @@ import tw, { styled } from 'twin.macro'
 import SmallCard from './SmallCard'
 import { dataShowcase } from '../constants'
 import { Carousel } from '@mantine/carousel'
-import { sliceHeight } from '../constants/config'
+import { sliceConfig } from '../constants/config'
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures'
 
 // z-[1]
@@ -20,13 +20,15 @@ import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures'
 const Container = styled(Carousel)`
   ${tw`
   flex
-  justify-center
+  justify-between
   w-full
   max-w-6xl
   gap-4
-  px-10
   items-center
   `}
+`
+const TypedCarouselSlide = styled(Carousel.Slide)`
+  mx-0
 `
 
 export default function SliceSection({ type }: { type: string }) {
@@ -34,19 +36,19 @@ export default function SliceSection({ type }: { type: string }) {
 
   return (
     <Container
-      slideGap="xl"
-      containScroll="trimSnaps"
-      slidesToScroll={3}
-      slideSize={sliceHeight[type]}
+      dragFree
       withIndicators
+      slideGap="sm"
+      containScroll="trimSnaps"
+      slidesToScroll={sliceConfig[type].slidesToScroll}
+      slideSize={sliceConfig[type].slideSize}
       align="center"
       controlsOffset="sm"
-      plugins={[WheelGesturesPlugin()]}
-    >
+      plugins={[WheelGesturesPlugin()]}>
       {data.map((item, index) => (
-        <Carousel.Slide>
+        <TypedCarouselSlide>
           <SmallCard info={item} type={type} key={`slice-${type}-${index}`} />
-        </Carousel.Slide>
+        </TypedCarouselSlide>
       ))}
     </Container>
   )
