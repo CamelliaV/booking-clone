@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import tw, { styled } from 'twin.macro'
 import { commonStyles } from '../styles'
-import SectionWrapper from '../hoc/SectionWrapper'
+// import SectionWrapper from '../hoc/SectionWrapper'
 // fixed
 // top-0
 // TODO: height adjustment

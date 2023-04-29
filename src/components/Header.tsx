@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useState } from 'react'
 import tw, { styled } from 'twin.macro'
 import { commonStyles } from '../styles'
-import SectionWrapper from '../hoc/SectionWrapper'
+// import SectionWrapper from '../hoc/SectionWrapper'
 import { Link } from 'react-router-dom'
 import { DateRange } from 'react-date-range'
 import 'react-date-range/dist/styles.css' // main css file
