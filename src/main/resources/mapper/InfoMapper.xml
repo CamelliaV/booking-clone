@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laritte.server.mapper.InfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.laritte.server.entity.Info">
+        <id column="id" property="id" />
+        <result column="hotel_name" property="hotelName" />
+        <result column="city_info" property="cityInfo" />
+        <result column="page_offset" property="pageOffset" />
+        <result column="img_url" property="imgUrl" />
+    </resultMap>
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        hotel_name, city_info, page_offset, img_url, id
+    </sql>
+
+</mapper>
