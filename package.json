@@ -5,25 +5,30 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev2": "vite --host",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@formkit/auto-animate": "^1.0.0-beta.6",
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@mantine/carousel": "^6.0.9",
+    "@mantine/core": "^6.0.9",
+    "@mantine/hooks": "^6.0.9",
     "@types/react-date-range": "^1.4.4",
     "date-fns": "^2.29.3",
     "embla-carousel-react": "^7.0.0",
     "embla-carousel-wheel-gestures": "^3.0.0",
+    "framer-motion": "^10.12.4",
     "react": "^18.2.0",
     "react-date-range": "^1.4.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0",
-    "styled-components": "^5.3.9"
+    "styled-components": "^5.3.10"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",

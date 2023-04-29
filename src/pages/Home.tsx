@@ -8,6 +8,13 @@ import Footer from '../components/Footer'
 import ImageCard from '../components/ImageCard'
 import ButtonLine from '../components/ButtonLine'
 import SliceSection from '../components/SliceSection'
+import { motion } from 'framer-motion'
+import SectionHOC from '../hoc/SectionHOC'
+
+const Container = styled.div`
+  font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica,
+    Arial, sans-serif;
+`
 
 const FeaturedContainer = styled.div`
   ${tw`
@@ -56,7 +63,7 @@ const SectionContainer = tw.div`
 
 export default function Home() {
   return (
-    <>
+    <Container>
       <Navbar></Navbar>
       <Header></Header>
       <FeaturedContainer>
@@ -125,12 +132,6 @@ export default function Home() {
         </SectionContainer>
         <SectionContainer>
           <SectionWrapper>
-            <Title>Offers</Title>
-            <Sub>Promotions, deals, and special offers for you</Sub>
-          </SectionWrapper>
-        </SectionContainer>
-        <SectionContainer>
-          <SectionWrapper>
             <Title>Quick and easy trip planner</Title>
             <Sub>
               Pick a vibe and explore the top destinations in the United States
@@ -139,9 +140,30 @@ export default function Home() {
           </SectionWrapper>
           <SliceSection type="planner" />
         </SectionContainer>
+        <SectionContainer>
+          <SectionWrapper>
+            <Title>Stay at our top unique properties</Title>
+            <Sub>
+              From castles and villas to boats and igloos, we've got it all
+            </Sub>
+          </SectionWrapper>
+          <SliceSection type="unique" />
+        </SectionContainer>
+        <SectionContainer>
+          <SectionWrapper>
+            <Title>Homes guests love</Title>
+          </SectionWrapper>
+          <SliceSection type="love" />
+        </SectionContainer>
+        <SectionContainer>
+          <SectionWrapper>
+            <Title>Get inspiration for your next trip</Title>
+          </SectionWrapper>
+          <SliceSection type="trip" />
+        </SectionContainer>
         <EmailSection />
         <Footer />
       </FeaturedContainer>
-    </>
+    </Container>
   )
 }

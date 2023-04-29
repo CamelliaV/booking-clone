@@ -17,6 +17,8 @@ import { DateRange } from 'react-date-range'
 import 'react-date-range/dist/styles.css' // main css file
 import 'react-date-range/dist/theme/default.css' // theme css file
 import { format } from 'date-fns'
+import { useAutoAnimate } from '@formkit/auto-animate/react'
+
 const Container = styled.div`
   background-color: ${commonStyles('bg')};
   color: ${commonStyles('text')};
@@ -33,7 +35,7 @@ const Wrapper = styled.div<{ type?: 'Hotels' }>`
   w-full
   relative
   `};
-  ${({type}) => type !== 'Hotels' && tw`mb-16`}
+  ${({ type }) => type !== 'Hotels' && tw`mb-16`}
 `
 const ItemList = tw.div`
   w-full
@@ -173,6 +175,7 @@ const OptionCounterButton = styled.button`
 function Header({ type }: { type?: 'Hotels' }) {
   const [openDate, setOpenDate] = useState(false)
   const [openOption, setOpenOption] = useState(false)
+  const [animationParent] = useAutoAnimate({ duration: 300, easing: 'ease-in-out' })
   const [date, setDate] = useState([
     {
       startDate: new Date(),
@@ -230,7 +233,7 @@ function Header({ type }: { type?: 'Hotels' }) {
                 <FontAwesomeIcon icon={faBed} style={{ color: 'lightgray' }} />
                 <SearchInput placeholder="Where are you going?"></SearchInput>
               </SearchItem>
-              <SearchItem>
+              <SearchItem ref={animationParent}>
                 <FontAwesomeIcon
                   icon={faCalendarDays}
                   style={{ color: 'lightgray' }}
@@ -248,7 +251,7 @@ function Header({ type }: { type?: 'Hotels' }) {
                   />
                 )}
               </SearchItem>
-              <SearchItem>
+              <SearchItem ref={animationParent}>
                 <FontAwesomeIcon
                   icon={faPerson}
                   style={{ color: 'lightgray' }}
