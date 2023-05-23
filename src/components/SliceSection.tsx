@@ -7,6 +7,16 @@ import { sliceConfig } from '../constants/config'
 import { WheelGesturesPlugin } from 'embla-carousel-wheel-gestures'
 import TripCard from './TripCard'
 import { rem } from '@mantine/core'
+import {
+  carouselSubTitle,
+  carouselTitle,
+  carouselUrl,
+  carouselLabel,
+  carouselRate,
+  carouselReview,
+  carouselPrice
+} from '../constants/data'
+import { Data } from '../types'
 
 // z-[1]
 // const Container = styled.div`
@@ -32,9 +42,42 @@ const TypedCarouselSlide = tw(Carousel.Slide)`
   
 `
 
-export default function SliceSection({ type }: { type: string }) {
-  const data = dataShowcase[type + 'Data']
-
+export default function SliceSection({
+  type,
+  isCarousel = false,
+  startIndex = 0,
+  length = 0
+}: {
+  type: string
+  isCarousel?: boolean
+  startIndex?: number
+  length?: number
+}) {
+  let data: Data = dataShowcase[type + 'Data'] as Data
+  if (isCarousel) {
+    data = []
+    for (let i = 0; i < length; i++) {
+      data.push({
+        url: carouselUrl[startIndex + i],
+        title: carouselTitle[startIndex + i],
+        subtitle: carouselSubTitle[startIndex + i]
+      })
+    }
+    let start = 0
+    if (type === 'love') start = 15
+    if (type === 'unique' || type === 'love') {
+      for (let i = 0; i < length; i++) {
+        data[i]!.reviews = carouselReview[start + i]
+        data[i]!.comment = carouselLabel[start + i]
+        data[i]!.score = carouselRate[start + i]
+      }
+    }
+    if (type === 'love') {
+      for (let i = 0; i < length; i++) {
+        data[i]!.price = carouselPrice[i]
+      }
+    }
+  }
   return (
     <Container
       dragFree
@@ -44,7 +87,6 @@ export default function SliceSection({ type }: { type: string }) {
       slidesToScroll={sliceConfig[type].slidesToScroll}
       slideSize={sliceConfig[type].slideSize}
       align="center"
-      controlsOffset="sm"
       plugins={[WheelGesturesPlugin()]}
       styles={{
         control: {
@@ -52,9 +94,10 @@ export default function SliceSection({ type }: { type: string }) {
             opacity: 0,
             cursor: 'default'
           },
-          border: '5px solid black',
-          color: 'yellow',
-          width: rem(12)
+          border: '2px solid',
+          color: 'purple',
+          width: rem(20),
+          height: rem(20)
         },
         indicator: {
           width: rem(12),
@@ -77,7 +120,7 @@ export default function SliceSection({ type }: { type: string }) {
       )}
       {data.map((item, index) => (
         <TypedCarouselSlide>
-          <SmallCard info={item} type={type} key={`slice-${type}-${index}`} />
+          <SmallCard info={item!} type={type} key={`slice-${type}-${index}`} />
         </TypedCarouselSlide>
       ))}
     </Container>

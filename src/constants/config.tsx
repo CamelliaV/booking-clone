@@ -29,7 +29,10 @@ const sliceConfig: sliceConfig = {
     slidesToScroll: 4
   },
   love: {
-    // 263 : 210
+    slideSize: '25%',
+    slidesToScroll: 4
+  },
+  connect: {
     slideSize: '25%',
     slidesToScroll: 4
   },

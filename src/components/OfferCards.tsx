@@ -1,10 +1,14 @@
+import { motion } from 'framer-motion'
 import React from 'react'
 import { Link } from 'react-router-dom'
 import tw, { styled } from 'twin.macro'
-const OfferCardContainer = tw.div`
+import SectionHOC from '../hoc/SectionHOC'
+import { fadeIn, textVariant } from '../constants/motion'
+const OfferCardContainer = tw(motion.div)`
   flex
   w-full
   max-w-6xl
+  mx-auto
   justify-between
   gap-4
 `
@@ -70,9 +74,9 @@ const Img = tw.img`
   justify-center
 `
 
-export default function OfferCards() {
+function OfferCards() {
   return (
-    <OfferCardContainer>
+    <OfferCardContainer variants={textVariant()}>
       <OfferCard>
         <TextWrapper>
           <Title>Fly away to your dream vacation</Title>
@@ -102,3 +106,4 @@ export default function OfferCards() {
     </OfferCardContainer>
   )
 }
+export default SectionHOC(OfferCards)

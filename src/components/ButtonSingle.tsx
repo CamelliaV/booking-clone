@@ -13,6 +13,7 @@ const Container = styled.div`
   items-center
   justify-between
   gap-2
+  max-w-fit
   flex-[1]
   `};
   &: hover {
@@ -22,22 +23,31 @@ const Container = styled.div`
 
 // text-[rgb(0, 113, 194)]
 
-const Text = tw.span``
+const Text = tw.span`
+  flex
+  items-center
+  justify-center
+`
 
 export default function ButtonSingle({
   text,
   icon,
   choice,
-  setChoice
+  setChoice,
+  setHook
 }: {
   text: string
   icon?: ReactJSXElement
   choice: string
   setChoice: React.Dispatch<React.SetStateAction<string>>
+  setHook?: React.Dispatch<React.SetStateAction<string>>
 }) {
   return (
     <Container
-      onClick={() => setChoice(text)}
+      onClick={() => {
+        setChoice(text)
+        if (setHook) setHook(text)
+      }}
       style={
         choice === text
           ? {

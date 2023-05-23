@@ -18,8 +18,11 @@ import 'react-date-range/dist/styles.css' // main css file
 import 'react-date-range/dist/theme/default.css' // theme css file
 import { format } from 'date-fns'
 import { useAutoAnimate } from '@formkit/auto-animate/react'
+import { motion } from 'framer-motion'
+import { fadeIn, textVariant } from '../constants/motion'
+import SectionHOC from '../hoc/SectionHOC'
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   background-color: ${commonStyles('bg')};
   color: ${commonStyles('text')};
   ${tw`
@@ -51,13 +54,20 @@ const Item = styled.div`
   flex
   items-center
   gap-3
+  relative
   `};
-  &: hover {
-    border: 1px solid white;
-    ${tw`
-    p-3
-    rounded-3xl
-    `};
+  :hover {
+    ::before {
+      content: '';
+      width: 140%;
+      height: 120%;
+      right: 20%;
+      left: -20%;
+      opacity: 0.1;
+      position: absolute;
+      border-radius: 100px;
+      background-color: currentcolor;
+    }
   }
 `
 const Title = tw.div`
@@ -111,13 +121,22 @@ const SearchItem = styled.div`
   h-full`};
   border: 2px solid #febb02;
 `
-const SearchInput = tw.input`
-  outline-slate-400
+const SearchInput = styled.input`
+  ${tw`
+  outline-blue-400
+  
   w-full
-  text-[black]
+  text-black
+  `};
+  &::placeholder {
+    color: black;
+  }
+  &:hover::placeholder {
+    color: gray;
+  }
 `
 const SearchSpan = tw.span`
-  text-[lightgray]
+  text-black
   cursor-pointer
 `
 const StyledDateRange = tw(DateRange)`
@@ -172,10 +191,15 @@ const OptionCounterButton = styled.button`
   }
 `
 
+const Span = styled.span``
+
 function Header({ type }: { type?: 'Hotels' }) {
   const [openDate, setOpenDate] = useState(false)
   const [openOption, setOpenOption] = useState(false)
-  const [animationParent] = useAutoAnimate({ duration: 300, easing: 'ease-in-out' })
+  const [animationParent] = useAutoAnimate({
+    duration: 300,
+    easing: 'ease-in-out'
+  })
   const [date, setDate] = useState([
     {
       startDate: new Date(),
@@ -200,28 +224,28 @@ function Header({ type }: { type?: 'Hotels' }) {
   }
 
   return (
-    <Container>
+    <Container variants={textVariant()}>
       <Wrapper type={type}>
         <ItemList>
           <Item>
             <FontAwesomeIcon icon={faBed} />
-            <span>Stays</span>
+            <Span>Stays</Span>
           </Item>
           <Item>
             <FontAwesomeIcon icon={faPlane} />
-            <span>Flights</span>
+            <Span>Flights</Span>
           </Item>
           <Item>
             <FontAwesomeIcon icon={faCar} />
-            <span>Car rentals</span>
+            <Span>Car rentals</Span>
           </Item>
           <Item>
             <FontAwesomeIcon icon={faPalette} />
-            <span>Attractions</span>
+            <Span>Attractions</Span>
           </Item>
           <Item>
             <FontAwesomeIcon icon={faTaxi} />
-            <span>Airport taxis</span>
+            <Span>Airport taxis</Span>
           </Item>
         </ItemList>
         {type !== 'Hotels' && (
@@ -230,13 +254,13 @@ function Header({ type }: { type?: 'Hotels' }) {
             <Desc>Search deals on hotels, homes, and much more...</Desc>
             <SearchList>
               <SearchItem>
-                <FontAwesomeIcon icon={faBed} style={{ color: 'lightgray' }} />
+                <FontAwesomeIcon icon={faBed} style={{ color: 'black' }} />
                 <SearchInput placeholder="Where are you going?"></SearchInput>
               </SearchItem>
               <SearchItem ref={animationParent}>
                 <FontAwesomeIcon
                   icon={faCalendarDays}
-                  style={{ color: 'lightgray' }}
+                  style={{ color: 'black' }}
                 />
                 <SearchSpan onClick={() => setOpenDate(!openDate)}>{`${format(
                   date[0].startDate,
@@ -329,4 +353,4 @@ function Header({ type }: { type?: 'Hotels' }) {
     </Container>
   )
 }
-export default Header
+export default SectionHOC(Header)

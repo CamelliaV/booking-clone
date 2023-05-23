@@ -20,7 +20,6 @@ const Text = styled.div`
   flex-col
   justify-end
   py-4
-
   px-3
   `};
   background: linear-gradient(-180deg, rgba(0, 0, 0, 0) 12%, #000 97%);
@@ -62,7 +61,11 @@ export default function SmallCard({
 }) {
   return (
     <Container>
-      <Img whileHover={{ scale: 1.05, transition: {duration: 0.4} }} src={info.url} alt={info.title} />
+      <Img
+        whileHover={{ scale: 1.05, transition: { duration: 0.4 } }}
+        src={info.url}
+        alt={info.title}
+      />
       <Text>
         <Title>{info.title}</Title>
         <Sub>{info.subtitle}</Sub>

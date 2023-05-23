@@ -2,11 +2,11 @@ import { motion } from 'framer-motion'
 import React from 'react'
 import tw from 'twin.macro'
 
-const Container = tw.div`
+const Container = tw(motion.section)`
+  w-full  
   max-w-6xl
-  mx-auto
 `
-const staggerContainer:any = (delayChildren: React.FunctionComponent) => {
+const staggerContainer: any = (delayChildren: React.FunctionComponent) => {
   return {
     hidden: {},
     show: {
@@ -19,6 +19,7 @@ const staggerContainer:any = (delayChildren: React.FunctionComponent) => {
 export default function SectionHOC(Component: React.FunctionComponent) {
   return () => (
     <motion.section
+      style={{ width: '100%' }}
       variants={staggerContainer()}
       initial="hidden"
       whileInView="show"
