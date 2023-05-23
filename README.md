@@ -3,22 +3,21 @@
 ### Branch Main [Front end]
 
 Main stack: React + Tailwind + StyledComponent [Typescript]
+
 Supportive:
 - AutoAnimate, Framer-Motion -> Animation Support
 - Mantine UI -> Carousel Mainly
 
-Intro: A clone for booking website (https://www.booking.com/) in React + TS, currently on page index and signup/signin.
+Intro: A clone for booking website (https://www.booking.com/) in React + TS.
 
 Current:
-- Index[90%]
+- Index completed
+- SignUp/LogIn completed
 
 TODO:
-- SignUp/SignIn
 - Responsive Design
-- Higher-Order Component Encapsulation
-- Calls to backend apis
 
-live demo: https://master--harmonious-ganache-393da4.netlify.app/
+live demo: https://booking-clone-mw2umt8c0-camelliav.vercel.app/
 
 ### Branch Backend
 
