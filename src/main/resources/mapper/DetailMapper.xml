@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.laritte.server.mapper.DetailMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.laritte.server.entity.Detail">
+        <id column="id" property="id" />
+        <result column="hotel_name" property="hotelName" />
+        <result column="province" property="province" />
+        <result column="district" property="district" />
+        <result column="address" property="address" />
+        <result column="score" property="score" />
+        <result column="num_images" property="numImages" />
+        <result column="rating" property="rating" />
+    </resultMap>
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, hotel_name, province, district, address, score, num_images, rating
+    </sql>
+
+</mapper>
