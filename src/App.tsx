@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/Home'
-import Hotels from './pages/Hotels'
 import Hotel from './pages/Hotel'
 import SignIn from './pages/SignIn'
 import Password from './pages/Password'
