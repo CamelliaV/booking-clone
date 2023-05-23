@@ -10,3 +10,13 @@ export type Data = [
     price?: string
   }?
 ]
+export type Info = {
+  address: string
+  district: string
+  hotelName: string
+  id: number
+  numImages: number
+  province: string
+  rating: number
+  score: number
+}

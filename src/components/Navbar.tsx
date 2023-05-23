@@ -43,7 +43,7 @@ const Wrapper = styled(motion.div)`
   color: ${commonStyles('text')};
 `
 
-const Logo = tw.div`
+const Logo = tw(Link)`
   font-bold
   text-2xl
 `
@@ -117,9 +117,9 @@ function Navbar() {
   return (
     <Container>
       <Wrapper variants={textVariant()}>
-        <Logo>Booking.com</Logo>
+        <Logo to="/">Booking.com</Logo>
         <NavItems>
-          {(type !== '/signin' && type !== '/password' && type !== '/success') ? (
+          {type !== '/signin' && type !== '/password' && type !== '/success' ? (
             <>
               <Span>CNY</Span>
               <PublicOutlinedIcon />

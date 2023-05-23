@@ -65,7 +65,7 @@ const HomeBody = () => {
           <Title>Offers</Title>
           <Sub>Promotions, deals, and special offers for you</Sub>
         </SectionWrapper>
-        <OfferCards/>
+        <OfferCards />
       </SectionContainer>
       <SectionContainer>
         <ImgCards>
